@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'  // Use the exact name configured in Jenkins settings
+    environment {
+        NODEJS_HOME = tool 'NodeJS' // Define Node.js installation
     }
 
     stages {
