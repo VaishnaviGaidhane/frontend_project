@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH="C:\Program Files\nodejs\node.exe" // Define Node.js installation
+        PATH = "C:\Program Files\nodejs\node.exe" // Define Node.js installation
     }
 
     stages {
