@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS23' // Define Node.js installation
+    environment {
+        NODEJS_HOME = tool 'NodeJS 23.6.0' // Define Node.js installation
     }
 
     stages {
