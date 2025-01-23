@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/frontend-project.git'
+                git branch: 'master', credentialsId: 'github-pat', url: 'https://github.com/yourusername/frontend-project.git'
             }
         }
 
