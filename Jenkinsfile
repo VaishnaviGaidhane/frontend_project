@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NODEJS_HOME = tool 'NodeJS' 'NodeJS_20' // Define Node.js installation
+        NODEJS_HOME = tool 'NodeJS' // Define Node.js installation
     }
 
     stages {
