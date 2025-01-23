@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'  // If using npm, otherwise ignore for pure HTML/CSS/JS
+                bat '"C:\Program Files\nodejs\npm" install'  // If using npm, otherwise ignore for pure HTML/CSS/JS
             }
         }
 
