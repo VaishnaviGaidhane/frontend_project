@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "C:\Program Files\nodejs\node.exe" // Define Node.js installation
+         NODEJS_HOME = tool 'NodeJS' // Define Node.js installation
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat '"C:\Program Files\nodejs\npm" install'  // If using npm, otherwise ignore for pure HTML/CSS/JS
+                bat 'npm install'  // If using npm, otherwise ignore for pure HTML/CSS/JS
             }
         }
 
