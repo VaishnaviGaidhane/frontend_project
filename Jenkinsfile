@@ -14,14 +14,14 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'  // If using npm, otherwise ignore for pure HTML/CSS/JS
+                bat 'npm install'  // If using npm, otherwise ignore for pure HTML/CSS/JS
             }
         }
 
         stage('Linting') {
             steps {
-                sh 'npx eslint "**/*.js" || true'
-                sh 'npx stylelint "**/*.css" || true'
+                bat 'npx eslint "**/*.js" || true'
+                bat 'npx stylelint "**/*.css" || true'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to server...'
-                sh 'scp -r ./* user@server-ip:/var/www/html/'
+                bat 'scp -r ./* user@server-ip:/var/www/html/'
             }
         }
     }
