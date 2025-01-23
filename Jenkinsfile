@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-         NODEJS_HOME = tool 'NodeJS' // Define Node.js installation
+         PATH = "C:\Program Files\nodejs\node.exe ; C:\Users\ASUS\AppData\Roaming\npm;" // Define Node.js installation
     }
 
     stages {
