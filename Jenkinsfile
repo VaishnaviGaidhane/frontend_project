@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-         NODEJS_HOME = tool 'NodeJS_20' // Define Node.js installation
+         NODEJS_HOME = tool 'NodeJS_22' // Define Node.js installation
     }
 
     stages {
@@ -21,8 +21,7 @@ pipeline {
         
      stage('Install Dependencies') {
     steps {
-    
-        bat ' call npm install'
+        bat '"C:\\Program Files\\nodejs\\npm.cmd" install'
     }
 }
 
