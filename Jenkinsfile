@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to server...'
-                bat 'scp -r ./* user@server-ip:/var/www/html/'
+                bat 'scp -r ./* 192.168.45.119:/var/www/html/'
             }
         }
     }
