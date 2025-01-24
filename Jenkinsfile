@@ -28,6 +28,7 @@ pipeline {
 
         stage('Linting') {
             steps {
+                bat 'npm install -g npx'
                 bat 'npx eslint "**/*.js" || true'
                 bat 'npx stylelint "**/*.css" || true'
             }
