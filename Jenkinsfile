@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to server...'
-               bat 'rsync -avz --rsh="ssh" ./ user@192.168.56.1:/var/www/html/'
+               bat 'scp -r ./* user@192.168.56.1:/var/www/html/'
 
             }
         }
