@@ -11,14 +11,15 @@ pipeline {
                 git branch: 'master', credentialsId: '7abbb7c9-c1f8-433b-b2d7-9c75b36fbfad', url: 'https://github.com/VaishnaviGaidhane/frontend_project.git'
             }
         }
-  stage('Verify NodeJS Setup') {
-       steps {
-        bat 'echo %PATH%'
-        bat 'node -v'
-        bat 'npm -v'
-    }
-}
-        stage('Install Dependencies') {
+   
+        stage('Verify NodeJS Setup') {
+            steps {
+                bat '"C:\\Program Files\\nodejs\\node.exe" -v'
+                bat '"C:\\Program Files\\nodejs\\npm.cmd" -v'
+            }
+        }
+        
+     stage('Install Dependencies') {
     steps {
     
         bat ' call npm install'
