@@ -14,10 +14,7 @@ pipeline {
 
         stage('Install Dependencies') {
     steps {
-        script {
-            def nodejs = tool name: 'NodeJS_20', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-            env.PATH = "C:\Program Files\nodejs\node.exe"
-        }
+    
         bat 'npm install'
     }
 }
