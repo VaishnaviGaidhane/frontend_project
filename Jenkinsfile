@@ -45,8 +45,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to server...'
-                bat """
-            pscp -r .\\* user@192.168.56.1:/var/www/html/
+                 bat """
+            robocopy . \\192.168.56.1\\var\\www\\html /MIR /Z /R:3 /W:5
         """
 
             }
