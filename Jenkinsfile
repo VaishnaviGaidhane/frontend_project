@@ -45,7 +45,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to server...'
-               bat 'scp -r ./* user@192.168.56.1:/var/www/html/'
+               bat """
+            xcopy /E /I /Y .\\* \\\\192.168.56.1\\shared\\folder\\
+        """
 
             }
         }
