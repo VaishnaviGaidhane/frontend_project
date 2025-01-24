@@ -29,6 +29,7 @@ pipeline {
         stage('Linting') {
             steps {
                 bat '"C:\\Program Files\\nodejs\\npm.cmd" install -g npx'
+                bat ' "C:\\Program Files\\nodejs\\npm.cmd" install -g eslint stylelint'
                 bat 'npx eslint "**/*.js" || true'
                 bat 'npx stylelint "**/*.css" || true'
             }
