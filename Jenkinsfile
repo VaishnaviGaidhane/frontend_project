@@ -13,10 +13,14 @@ pipeline {
         }
 
         stage('Install Dependencies') {
-            steps {
-                bat 'npm install'  // If using npm, otherwise ignore for pure HTML/CSS/JS
-            }
+    steps {
+        script {
+            def nodejs = tool name: 'NodeJS_20', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+            env.PATH = "C:\Program Files\nodejs\node.exe"
         }
+        bat 'npm install'
+    }
+}
 
         stage('Linting') {
             steps {
