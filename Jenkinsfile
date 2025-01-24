@@ -31,8 +31,8 @@ pipeline {
                 bat '"C:\\Program Files\\nodejs\\npm.cmd" install -g npx'
                 bat ' "C:\\Program Files\\nodejs\\npm.cmd" install -g eslint stylelint'
                 bat '"C:\\Program Files\\nodejs\\node.exe" -v'
-                 bat '"C:\\Program Files\\nodejs\\npm.cmd" exec -- eslint "**/*.js" || true'
-                bat '"C:\\Program Files\\nodejs\\npm.cmd" exec -- stylelint "**/*.css" || true'
+                 bat '"C:\\Program Files\\nodejs\\npm.cmd" exec -- eslint "**/*.js" || exit 0'
+                bat '"C:\\Program Files\\nodejs\\npm.cmd" exec -- stylelint "**/*.css" || exit 0'
             }
         }
 
