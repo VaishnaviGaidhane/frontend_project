@@ -21,7 +21,7 @@ pipeline {
         
      stage('Install Dependencies') {
     steps {
-        bat '"C:\\Program Files\\nodejs\\npm.cmd" install -g "C:\Program Files\nodejs\npx.cmd"'  // Install npx globally
+        bat '"C:\\Program Files\\nodejs\\npm.cmd" install -g "C:\\Program Files\\nodejs\\npx.cmd"'  // Install npx globally
         bat '"C:\\Program Files\\nodejs\\npm.cmd" install'
     }
 }
