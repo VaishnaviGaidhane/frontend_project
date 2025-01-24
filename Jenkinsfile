@@ -30,8 +30,8 @@ pipeline {
             steps {
                 bat '"C:\\Program Files\\nodejs\\npm.cmd" install -g npx'
                 bat ' "C:\\Program Files\\nodejs\\npm.cmd" install -g eslint stylelint'
-                 bat 'npm exec -- eslint "**/*.js" || true'
-                bat 'npm exec -- stylelint "**/*.css" || true'
+                 bat '"C:\\Program Files\\nodejs\\npm.cmd" exec -- eslint "**/*.js" || true'
+                bat '"C:\\Program Files\\nodejs\\npm.cmd" exec -- stylelint "**/*.css" || true'
             }
         }
 
