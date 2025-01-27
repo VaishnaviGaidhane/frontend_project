@@ -47,11 +47,8 @@ pipeline {
         stage('Deploy') {
             steps {
                echo 'Deploying to server...'
-                bat """
-                    net use Z: \\\\192.168.56.1\\var\\www\\html
-                    robocopy . Z:\\ /MIR /Z /R:3 /W:5
-                    net use Z: /delete
-                """
+               
+               
 
             }
         }
