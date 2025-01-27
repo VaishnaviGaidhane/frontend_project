@@ -26,18 +26,17 @@ pipeline {
     }
 }
 
-        stage('Linting') {
-            steps {
-                bat '"C:\\Program Files\\nodejs\\npm.cmd" install -g npx'
-                bat ' "C:\\Program Files\\nodejs\\npm.cmd" install -g eslint stylelint'
-                bat '"C:\\Program Files\\nodejs\\node.exe" -v'
-        bat """
-            "C:\\Program Files\\nodejs\\npm.cmd" exec -- "C:\\Program Files\\nodejs\\node.exe" eslint "**/*.js" || exit 0
-            "C:\\Program Files\\nodejs\\npm.cmd" exec -- "C:\\Program Files\\nodejs\\node.exe" stylelint "**/*.css" || exit 0
-        """
-                
-            }
-        }
+       stage('Linting') {
+    steps {
+        bat "\"C:\\Program Files\\nodejs\\npm.cmd\" install -g npx"
+        bat "\"C:\\Program Files\\nodejs\\npm.cmd\" install -g eslint stylelint"
+        bat "\"C:\\Program Files\\nodejs\\node.exe\" -v"
+
+        bat "\"C:\\Program Files\\nodejs\\npm.cmd\" exec -- eslint \"**/*.js\" || exit 0"
+        bat "\"C:\\Program Files\\nodejs\\npm.cmd\" exec -- stylelint \"**/*.css\" || exit 0"
+    }
+}
+
 
         stage('Build') {
             steps {
